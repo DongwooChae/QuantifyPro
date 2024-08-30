@@ -2,6 +2,8 @@ import pandas as pd
 
 # CSV 파일 경로
 csv_file = r'C:\Users\User\Documents\GitHub\QuantifyPro\일정관리_db\KAP_일정관리\db_csv\20240829_db.csv'
+# save_csv = r"C:\Users\User\Documents\GitHub\QuantifyPro\일정관리_db\inster_statements.sql"
+
 
 # 데이터프레임으로 CSV 파일 읽기
 try:
@@ -30,9 +32,12 @@ for index, row in df.iterrows():
 
 # INSERT 문 파일로 저장
 try:
-    with open(r'C:\Users\User\Documents\GitHub\QuantifyPro\일정관리_db', 'w', encoding='utf-8') as f:
+    with open(r'C:\Users\User\Documents\GitHub\QuantifyPro\일정관리_db\insert_statements.sql', 'w', encoding='utf-8') as f:
         for statement in insert_statements:
             f.write(statement + '\n')
-    print("INSERT statements have been generated and saved to insert_statements.sql")
+    print("성공적으로 저장되었습니다.")
 except Exception as e:
     print(f"Error writing SQL file: {e}")
+
+# C:/Users/User/Desktop/KAP_일정관리/insert_statements.sql
+# C:\Users\User\Documents\GitHub\QuantifyPro\일정관리_db/inster_statements.sql
