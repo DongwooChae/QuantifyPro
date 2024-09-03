@@ -1,7 +1,7 @@
 import pandas as pd
 
 # CSV 파일 경로
-csv_file = r'C:\Users\User\Documents\GitHub\QuantifyPro\일정관리_db\KAP_일정관리\db_csv\20240830_db.csv'
+csv_file = r'C:\Users\User\Documents\GitHub\QuantifyPro\일정관리_db\KAP_일정관리\db_csv\20240902_db.csv'
 # save_csv = r"C:\Users\User\Documents\GitHub\QuantifyPro\일정관리_db\inster_statements.sql"
 
 
