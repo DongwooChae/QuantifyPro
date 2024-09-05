@@ -1,9 +1,7 @@
 import pandas as pd
 
-# CSV 파일 경로
+# CSV 파일 경로 (URL이 문자열 안에 있어야 합니다.)
 csv_file = 'https://raw.githubusercontent.com/DongwooChae/QuantifyPro/master/%EC%9D%BC%EC%A0%95%EA%B4%80%EB%A6%AC_db/KAP_%EC%9D%BC%EC%A0%95%EA%B4%80%EB%A6%AC/db_csv/20240904_db.csv'
-# save_csv = r"C:\Users\User\Documents\GitHub\QuantifyPro\일정관리_db\inster_statements.sql"
-# C:\Users\dwchae23\QuantifyPro\workplace\일정관리_db\KAP_일정관리\db_csv\20240904_db.csv
 
 # 데이터프레임으로 CSV 파일 읽기
 try:
@@ -24,7 +22,7 @@ for index, row in df.iterrows():
         if pd.isna(value):  # NaN 값 처리
             values.append('NULL')
         elif isinstance(value, str):
-            values.append('"' + value.replace('"', '""') + '"')  # 따옴표 처리
+            values.append(f'"{value.replace(\'"\', \'""\')}"')  # 문자열 내부의 따옴표 처리
         else:
             values.append(str(value))
     insert_statement = f'INSERT INTO {table_name} ({", ".join(columns)}) VALUES ({", ".join(values)});'
@@ -32,12 +30,9 @@ for index, row in df.iterrows():
 
 # INSERT 문 파일로 저장
 try:
-    with open(r'C:\Users\dwchae23\QuantifyPro\workplace\일정관리_db\insert_statements.sql', 'w', encoding='utf-8') as f:
+    with open(r'C:\Users\User\Documents\GitHub\QuantifyPro\일정관리_db\insert_statements.sql', 'w', encoding='utf-8') as f:
         for statement in insert_statements:
             f.write(statement + '\n')
     print("성공적으로 저장되었습니다.")
 except Exception as e:
     print(f"Error writing SQL file: {e}")
-
-# C:/Users/User/Desktop/KAP_일정관리/insert_statements.sql
-# C:\Users\User\Documents\GitHub\QuantifyPro\일정관리_db/inster_statements.sql
