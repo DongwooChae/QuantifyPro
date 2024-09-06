@@ -1,7 +1,7 @@
 import pandas as pd
 
 # CSV 파일 경로 (URL이 문자열 안에 있어야 합니다.)
-csv_file = 'https://raw.githubusercontent.com/DongwooChae/QuantifyPro/master/%EC%9D%BC%EC%A0%95%EA%B4%80%EB%A6%AC_db/KAP_%EC%9D%BC%EC%A0%95%EA%B4%80%EB%A6%AC/db_csv/20240904_db.csv'
+csv_file = r'C:\Users\User\Documents\GitHub\QuantifyPro\일정관리_db\KAP_일정관리\db_csv\20240905_db.csv'
 
 # 데이터프레임으로 CSV 파일 읽기
 try:
