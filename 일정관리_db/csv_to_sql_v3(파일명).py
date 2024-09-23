@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 # CSV 파일 경로
-csv_file = r'C:\Users\User\Documents\GitHub\QuantifyPro\일정관리_db\KAP_일정관리\db_csv\20240911_db.csv'
+csv_file = r'C:\Users\User\Documents\GitHub\QuantifyPro\일정관리_db\KAP_일정관리\db_csv\20240920_db.csv'
 
 # CSV 파일 이름에서 날짜 부분 추출
 file_name = os.path.basename(csv_file)  # 파일명만 추출 (예: 20240909_db.csv)
