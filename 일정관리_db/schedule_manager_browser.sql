@@ -13,7 +13,11 @@ SELECT
 	평가여부, 보고서리뷰
 	
 From 종목관리대장
+<<<<<<< HEAD
 WHERE 평가담당자 = "채동우" AND 평가값송부일 > '2024-12-08' and 평가여부 is null
+=======
+WHERE 평가담당자 = "채동우" AND 평가값송부일 > '2024-12-01' and 평가여부 is null
+>>>>>>> 9299f51e7118b86b9150ac33d2cc39e3069d6969
 ORDER BY 평가값송부일 asc;
 
 /* UPDATE 종목관리대장
