@@ -1,0 +1,19 @@
+new AquaCB 업데이트 로그
+
+2024-06-13
+- 옵션 분리단가 계산로직 수정
+   -> call, duty call 옵션의 가격은 합산되어 call 가격으로 산출됩니다.
+   -> call 가격 = (전체 CB 가격) - (w/o call&dutycall 가격)
+   -> put 가격 = (only put 가격) - (순수채권 가격)
+   -> 전환권 가격 = (w/o call&dutycall 가격) - (only put 가격)
+- 민감도 추가
+   -> delta, gamma, vega
+- YTM, 듀레이션 추가
+   -> modified duration, macaulay duration, modified convexity
+   -> 순수채권에 대한 YTM, 듀레이션, 컨벡시티 계산
+   -> bondInfo.ytmCompounding에서 이산복리, 연속복리를 선택하여야 함
+- 전체 CB가격에 대해 계산하던 effective duration 등은 삭제함
+
+2024-04-12
+- 제3자 지정 콜옵션 평가로직 추가
+- Refixing 로직 추가

@@ -1,0 +1,80 @@
+# 대용량 파일 제거 LFS
+bfg-1.14.0.jar
+
+# History files
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RData
+
+# User-specific files
+.Ruserdata
+
+# Example code in package build process
+*-Ex.R
+
+# Output files from R CMD build
+/*.tar.gz
+
+# Output files from R CMD check
+/*.Rcheck/
+
+# RStudio files
+.Rproj.user/
+
+# produced vignettes
+vignettes/*.html
+vignettes/*.pdf
+
+# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+.httr-oauth
+
+# knitr and R markdown default cache directories
+*_cache/
+/cache/
+
+# Temporary files created by R markdown
+*.utf8.md
+*.knit.md
+
+# R Environment Variables
+.Renviron
+
+# Bakcup
+Notebook/bakcup/
+
+# ipynb_checkpoints
+Notebook/.ipynb_checkpoints/
+
+# Notebook 폴더의 .ipynb, .md 제외한 모든 파일 ignore
+Notebook/*
+!Notebook/*.ipynb
+!Notebook/*.md
+
+# docs 폴더
+docs/*.png
+docs/*.ttf
+docs/*.csv
+docs/*.xlsx
+docs/*.txt
+docs/*.geojson
+docs/*.sav
+docs/ipynb_checkpoints/
+docs/refer/
+docs/qmd/
+
+# docs
+# docs/refer.html
+# docs/refer.qmd
+# docs/refer_files
+# docs/StartPython.html - 바로 가기.lnk
+# docs/.ipynb_checkpoints
+# docs/gif/*
+# docs/qmd/*
+# docs/*.sav
+# docs/*.xlsx
+# docs/*.csv
+# docs/cloud.png
+# docs/speech_moon.txt
+# docs/DoHyeon-Regular.ttf
