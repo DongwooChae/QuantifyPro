@@ -2,10 +2,16 @@ import pandas as pd
 import os
 
 # CSV 파일들이 있는 폴더 경로
-folder_path = r'C:\Users\User\Documents\GitHub\QuantifyPro\일정관리_db\KAP_일정관리\db_csv_group'
+# folder_path = r'C:\Users\User\Documents\GitHub\QuantifyPro\일정관리_db\KAP_일정관리\db_csv_group'
+
+# 회사 컴퓨터로 작업 시 아래 디렉토리 적용
+folder_path = r'C:\Users\dwchae23\QuantifyPro\workplace\일정관리_db\KAP_일정관리\db_csv_group'
 
 # 최종 SQL 파일 저장 경로
-output_file = r'C:\Users\User\Documents\GitHub\QuantifyPro\일정관리_db\KAP_일정관리\Table_Query\insert_statements_combined.sql'
+# output_file = r'C:\Users\User\Documents\GitHub\QuantifyPro\일정관리_db\KAP_일정관리\Table_Query\insert_statements_combined.sql'
+
+# 회사 컴퓨터로 작업 시 아래 디렉토리 적용
+output_file = r'C:\Users\dwchae23\QuantifyPro\workplace\일정관리_db\KAP_일정관리\Table_Query\insert_statements_combined.sql'
 
 # SQL 파일을 미리 열어둠 (쓰기 모드로 시작)
 try:
