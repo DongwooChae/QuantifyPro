@@ -18,5 +18,6 @@ SELECT
 	
 From 종목관리대장
 WHERE 평가담당자 = "채동우"
-	AND 보고서송부일 > DATE('now', '-1 day')
+	AND 보고서송부일 > '2025-03-31'
+	AND 보고서송부일 <= '2025-05-31'
 	ORDER BY 보고서송부일 asc;
