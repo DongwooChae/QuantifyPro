@@ -1,0 +1,201 @@
+﻿나이,성별,학력,기혼,소득,사용금액,사용횟수
+45,M,High School,Married,$60K - $80K,1144,42
+49,F,Graduate,Single,Less than $40K,1291,33
+51,M,Graduate,Married,$80K - $120K,1887,20
+40,F,High School,Unknown,Less than $40K,1171,20
+40,M,Uneducated,Married,$60K - $80K,816,28
+44,M,Graduate,Married,$40K - $60K,1088,24
+51,M,Unknown,Married,$120K +,1330,31
+32,M,High School,Unknown,$60K - $80K,1538,36
+37,M,Uneducated,Single,$60K - $80K,1350,24
+48,M,Graduate,Single,$80K - $120K,1441,32
+42,M,Uneducated,Unknown,$120K +,1201,42
+65,M,Unknown,Married,$40K - $60K,1314,26
+56,M,College,Single,$80K - $120K,1539,17
+35,M,Graduate,Unknown,$60K - $80K,1311,33
+57,F,Graduate,Married,Less than $40K,1570,29
+44,M,Unknown,Unknown,$80K - $120K,1348,27
+48,M,Post-Graduate,Single,$80K - $120K,1671,27
+41,M,Unknown,Married,$80K - $120K,1028,21
+61,M,High School,Married,$40K - $60K,1336,30
+45,F,Graduate,Married,Unknown,1207,21
+47,M,Doctorate,Divorced,$60K - $80K,1178,27
+62,F,Graduate,Married,Less than $40K,692,16
+41,M,High School,Married,$40K - $60K,931,18
+47,F,Unknown,Single,Less than $40K,1126,23
+54,M,Unknown,Married,$80K - $120K,1110,21
+41,F,Graduate,Single,Less than $40K,1051,22
+59,M,High School,Unknown,$40K - $60K,1197,23
+63,M,Unknown,Married,$60K - $80K,1904,40
+44,F,Uneducated,Single,Unknown,1052,18
+47,M,High School,Married,$40K - $60K,1045,38
+53,M,Unknown,Married,$80K - $120K,1038,25
+53,M,Uneducated,Married,$60K - $80K,1596,26
+41,M,Graduate,Married,$60K - $80K,1589,24
+53,F,College,Married,Less than $40K,1411,28
+58,M,Graduate,Married,$80K - $120K,1291,24
+55,F,College,Single,Less than $40K,1407,43
+55,F,Graduate,Married,Less than $40K,1877,37
+42,F,High School,Married,Less than $40K,966,22
+57,F,Graduate,Unknown,$40K - $60K,1464,28
+66,F,Doctorate,Married,Unknown,704,16
+45,M,Graduate,Single,$80K - $120K,1109,28
+51,M,Unknown,Married,$40K - $60K,1347,28
+50,F,College,Single,$40K - $60K,1756,33
+49,M,High School,Married,$60K - $80K,1756,32
+38,F,Graduate,Single,Unknown,1042,23
+49,M,Uneducated,Single,$80K - $120K,1444,28
+56,M,Doctorate,Married,$60K - $80K,1741,27
+59,M,Doctorate,Married,$40K - $60K,1719,27
+46,M,High School,Married,$80K - $120K,1217,27
+52,M,College,Single,$80K - $120K,1140,40
+52,F,Unknown,Married,Less than $40K,1878,30
+54,F,Graduate,Married,Less than $40K,705,19
+66,F,High School,Married,Less than $40K,1946,38
+49,M,Unknown,Married,$120K +,1414,35
+56,M,Graduate,Married,$120K +,602,15
+49,F,Graduate,Unknown,Less than $40K,1052,32
+49,F,Graduate,Single,Less than $40K,1295,40
+56,M,Uneducated,Married,$40K - $60K,1424,29
+44,F,Graduate,Married,Unknown,1359,25
+42,M,High School,Single,$60K - $80K,1168,27
+55,M,Unknown,Married,$80K - $120K,1097,33
+48,M,Graduate,Married,$60K - $80K,691,15
+39,M,High School,Divorced,$60K - $80K,1316,28
+44,M,Post-Graduate,Single,$120K +,1276,26
+53,M,High School,Single,$120K +,1289,23
+51,M,Uneducated,Single,$80K - $120K,1293,32
+57,M,College,Married,$60K - $80K,1353,35
+44,F,Uneducated,Single,Less than $40K,1132,28
+49,M,Graduate,Married,$60K - $80K,1670,17
+50,M,Doctorate,Married,$80K - $120K,837,15
+51,M,Graduate,Single,$120K +,1550,41
+55,F,Graduate,Married,Less than $40K,1540,36
+54,M,Graduate,Unknown,$60K - $80K,1256,21
+42,M,Uneducated,Married,$80K - $120K,1394,35
+44,M,College,Single,$60K - $80K,1341,24
+53,M,Graduate,Single,$80K - $120K,1289,33
+44,F,Graduate,Single,Less than $40K,1112,23
+37,F,Uneducated,Single,Less than $40K,2339,57
+49,M,Graduate,Divorced,$60K - $80K,1468,23
+47,M,Graduate,Married,$80K - $120K,1334,35
+47,M,Graduate,Married,$60K - $80K,1457,41
+44,M,Unknown,Unknown,$120K +,1603,29
+55,F,Unknown,Married,$40K - $60K,615,12
+59,F,Graduate,Married,Unknown,1068,20
+53,M,Graduate,Divorced,$80K - $120K,1590,27
+52,M,Graduate,Married,$60K - $80K,1531,35
+53,M,High School,Single,$120K +,1212,31
+43,F,Uneducated,Single,Less than $40K,1237,32
+44,M,High School,Single,$60K - $80K,1413,14
+57,M,Unknown,Married,$120K +,1516,29
+51,F,High School,Single,Less than $40K,1276,21
+49,M,High School,Single,$80K - $120K,1564,35
+45,M,Graduate,Single,$40K - $60K,1465,34
+53,M,Graduate,Single,$80K - $120K,1286,29
+45,F,Unknown,Married,Unknown,1312,20
+64,M,Graduate,Married,Less than $40K,1673,32
+45,M,Graduate,Married,$40K - $60K,1313,30
+53,M,Doctorate,Married,$40K - $60K,1609,42
+56,M,College,Married,$120K +,1158,19
+47,M,Unknown,Married,$80K - $120K,836,18
+49,F,College,Single,Unknown,1289,22
+41,F,Unknown,Married,Unknown,1487,26
+53,M,Graduate,Married,$120K +,1259,33
+44,F,Graduate,Single,Less than $40K,1298,15
+44,M,High School,Unknown,$60K - $80K,1226,34
+43,F,Post-Graduate,Married,Less than $40K,1566,37
+53,M,Post-Graduate,Single,$120K +,1022,21
+44,M,Uneducated,Married,$60K - $80K,1235,30
+62,F,Unknown,Married,Less than $40K,1951,44
+54,M,Unknown,Divorced,$120K +,1047,31
+57,M,Graduate,Married,$60K - $80K,1342,32
+42,M,Unknown,Married,$60K - $80K,1107,21
+42,M,High School,Divorced,$60K - $80K,1251,35
+54,F,Uneducated,Married,Less than $40K,1305,24
+48,M,Graduate,Single,$80K - $120K,1388,37
+49,M,Graduate,Single,$80K - $120K,1235,18
+52,M,High School,Unknown,$80K - $120K,2089,36
+50,M,High School,Single,$80K - $120K,1626,25
+49,M,Doctorate,Married,$60K - $80K,1111,24
+53,F,High School,Married,Less than $40K,1553,38
+50,M,Graduate,Single,$120K +,1064,13
+55,F,Doctorate,Married,Less than $40K,1243,29
+53,M,High School,Married,$80K - $120K,1659,38
+47,F,High School,Single,$40K - $60K,1594,47
+55,M,College,Single,$120K +,1268,42
+47,M,Graduate,Single,$60K - $80K,1304,24
+58,M,Graduate,Single,$120K +,1368,30
+53,M,Graduate,Married,$80K - $120K,720,23
+52,M,High School,Single,$40K - $60K,1521,29
+50,F,Uneducated,Unknown,Less than $40K,1137,30
+42,F,Graduate,Married,Less than $40K,978,16
+43,M,Unknown,Married,$40K - $60K,1221,16
+57,M,Graduate,Married,$80K - $120K,1565,28
+52,M,Graduate,Married,$80K - $120K,1578,34
+47,M,Doctorate,Single,Less than $40K,1493,32
+44,F,Graduate,Single,$40K - $60K,1178,27
+53,M,High School,Divorced,$60K - $80K,991,26
+45,M,College,Divorced,$60K - $80K,2560,42
+63,F,College,Married,Unknown,1657,29
+39,F,Post-Graduate,Single,Less than $40K,1204,19
+48,F,High School,Married,Less than $40K,673,18
+51,M,Unknown,Single,$120K +,1131,18
+54,M,Graduate,Married,$80K - $120K,1576,25
+59,F,Graduate,Single,Less than $40K,1217,20
+59,M,College,Single,$60K - $80K,530,10
+48,F,Uneducated,Married,Less than $40K,739,16
+41,F,Graduate,Single,Less than $40K,1617,31
+55,M,Graduate,Married,$120K +,1592,34
+47,F,Graduate,Married,Unknown,1343,30
+41,M,High School,Married,$80K - $120K,1303,39
+40,M,High School,Single,$80K - $120K,1351,22
+68,M,Graduate,Married,Unknown,1910,32
+50,F,Graduate,Single,$40K - $60K,1298,22
+47,M,Uneducated,Single,$60K - $80K,1087,29
+53,F,College,Married,Less than $40K,1439,26
+42,F,Unknown,Married,$40K - $60K,1238,28
+48,F,High School,Single,$40K - $60K,1716,29
+49,M,Doctorate,Married,$120K +,1099,27
+44,F,Uneducated,Married,Unknown,1058,24
+43,F,Graduate,Divorced,Less than $40K,1285,29
+56,M,High School,Married,$80K - $120K,1651,28
+59,F,College,Single,Unknown,1152,31
+46,M,Uneducated,Married,$60K - $80K,1767,38
+47,F,Unknown,Divorced,Less than $40K,1039,24
+50,F,Uneducated,Married,$40K - $60K,1130,28
+51,F,Uneducated,Married,Less than $40K,1645,30
+47,F,Uneducated,Married,Less than $40K,1413,29
+58,F,Uneducated,Married,Less than $40K,1218,23
+46,M,Graduate,Single,$80K - $120K,597,17
+53,M,High School,Married,$60K - $80K,2184,53
+45,F,Uneducated,Divorced,Unknown,1592,37
+52,F,High School,Married,Less than $40K,1388,28
+53,M,Unknown,Married,$80K - $120K,757,20
+50,M,High School,Married,$80K - $120K,1504,34
+41,F,High School,Married,$40K - $60K,1503,34
+45,F,Graduate,Divorced,$40K - $60K,1105,28
+53,M,Uneducated,Married,$80K - $120K,2398,47
+67,F,Graduate,Married,Less than $40K,1661,32
+57,F,Uneducated,Single,$40K - $60K,1421,22
+59,F,Uneducated,Married,$40K - $60K,999,28
+45,M,Uneducated,Married,$40K - $60K,1387,18
+51,M,Graduate,Married,$80K - $120K,1243,24
+59,F,Uneducated,Married,Less than $40K,1860,36
+53,M,Graduate,Married,$60K - $80K,1502,25
+47,M,Graduate,Married,$60K - $80K,1460,50
+49,F,Uneducated,Single,Unknown,1348,27
+49,M,Post-Graduate,Single,$80K - $120K,1087,33
+60,F,College,Single,Less than $40K,1226,33
+50,F,High School,Married,Less than $40K,1230,28
+41,F,Post-Graduate,Married,Unknown,1555,32
+57,M,Graduate,Married,$80K - $120K,1827,24
+43,M,Graduate,Unknown,$80K - $120K,1376,35
+57,F,Graduate,Married,Less than $40K,1771,37
+54,M,Doctorate,Married,$120K +,1873,52
+51,F,Post-Graduate,Married,Less than $40K,1679,42
+47,F,High School,Married,Less than $40K,1002,22
+41,M,High School,Unknown,$120K +,1344,21
+53,M,Uneducated,Married,$80K - $120K,1461,42
+68,M,High School,Married,Less than $40K,760,21
+44,F,Graduate,Married,$80K - $120K,1316,25

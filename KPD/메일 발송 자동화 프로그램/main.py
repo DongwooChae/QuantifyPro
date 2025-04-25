@@ -102,12 +102,15 @@ def main():
             print(">> 테스트 모드: 첫 번째 메일 창을 열었습니다.")
             break
         else:
-            mail.Save()
-            # mail.Send()
-            print(f">> Draft 저장: {row['담당자']} <{row['email']}>")
+            # 최종 확인 모드 : 모든 메일 미리보기 후 직접 발송
+            mail.Display()
+            print("F>> 미리보기: {row['담당자']} <{row['email']}> 메일 창을 열었습니다.")
+            
 
     if test_mode:
         print("테스트가 완료되었습니다. Outlook에서 메일 내용을 확인하세요.")
+    else:
+        print("모든 메일 미리보기 창을 열었습니다. 내용을 확인하신 뒤 직접 발송 버튼을 눌러주세요.")
 
 if __name__ == "__main__":
     main()
