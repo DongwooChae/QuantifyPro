@@ -5,7 +5,8 @@ from sklearn.linear_model import LinearRegression
 
 import matplotlib.pyplot as plt
 from matplotlib.ticker import StrMethodFormatter
-df = pd.read_excel('costdata.xlsm', sheet_name=0)
+from loader import df
+# df = pd.read_excel('costdata.xlsm', sheet_name=0)
 
 # 매출과 매출원가 선형회귀 분석
 
@@ -19,7 +20,7 @@ print(model.score(sales, cost))  # R^2 score
 print(model.intercept_) # b값
 print(model.coef_) # a값
 
-print(model.predict([[1250000]])) # 매출 1250000일 때 예측되는 매출원가
+# print(model.predict([[1250000]])) # 매출 1250000일 때 예측되는 매출원가
 
 
 
@@ -34,6 +35,24 @@ print(model.predict([[1250000]])) # 매출 1250000일 때 예측되는 매출원
 원가율 = 계산된원가 / 준비한매출액
 
 # 결과 출력
-print("회귀분석을 통한 결과는 다음과 같습니다.")
+print("1단계 회귀분석을 통한 결과는 다음과 같습니다.")
 print(f"매출액이 {준비한매출액:,}일 경우, 매출원가는 {계산된원가:,.0f}으로 산출됩니다.")
 print(f"따라서 매출원가율은 {원가율:.2%}입니다.")
+
+
+"""
+여기서부터는 집에서 작성한 2단계 코드임
+2단계 비율회귀분석
+"""
+x = df[['invsales']].values
+y = df['매출원가율'].values
+
+ratio_model = LinearRegression().fit(x, y)
+beta1_est = ratio_model.intercept_
+beta0_est = ratio_model.coef_[0]
+
+
+print("추정된 변동비율 =", beta1_est)
+print("추정된 고정비량 =", beta0_est)
+b = ratio_model.predict([[1250000]])
+print(b)

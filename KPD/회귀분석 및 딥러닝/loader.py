@@ -20,7 +20,7 @@ print(df.describe())
 df['매출원가율'] = df['매출원가'] / df['매출']
 df['변동비율'] = df['변동비'] / df['매출']
 df['고정비율'] = df['고정비'] / df['매출']
-
+df['invsales'] = 1 / df['매출']
 # 매출 규모 수준으로 뿌려보기
 print(df.sort_values(by='매출', ascending=False))
 # 이렇게 보면 매출이 가장 높은 기업은 8,756,413인데 가장 낮은 기업은 8,945로 규모 차이가 매우 큼
