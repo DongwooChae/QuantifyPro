@@ -23,7 +23,7 @@ mail_template = template_env.get_template('mail_body.html')
 subject_template = "[KAP] 비시장성지분증권 공정가치 평가관련 자료요청의 건 ({기관})"
 
 # 4) 요청 리스트가 담긴 엑셀 파일 경로
-excel_path = r"\\10.10.10.11\Ai본부\F.AI본부\@대체평가2사업본부\메일 발송 자동화 프로그램\backdata\운용사(사전)자료요청담당자정리_2025년2분기_산은캐피탈_GP수정본_250416.xlsx"
+excel_path = r"\\10.10.10.11\Ai본부\F.AI본부\@대체평가2사업본부\메일 발송 자동화 프로그램\backdata\운용사(사전)자료요청담당자정리_2025년2분기_산은캐피탈_GP수정본_250416_동우테스트용.xlsx"
 # excel_path = r"C:\Users\dwchae23\Desktop\일정관리\의뢰리스트 확정 및 자료요청 일괄 전송메일\25.2Q\운용사(사전)자료요청담당자정리_2025년2분기_산은캐피탈_GP수정본_250416.xlsx"
 
 # 5) 첨부파일 리스트
