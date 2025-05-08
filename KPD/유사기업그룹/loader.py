@@ -14,7 +14,8 @@ df_company = pd.read_excel('company.xlsx', sheet_name=4, index_col='종목명')
 price = pd.read_excel('price.xlsx', sheet_name=0, index_col='날짜')
 fsdata = pd.read_excel('fsdata_0331.xlsx', sheet_name=0, index_col='종목명')
 
-
+category = pd.read_excel(f'C:\\Users\\dwchae23\\QuantifyPro\\workplace\\KPD\\유사기업그룹\\backdata\\category.xlsx', sheet_name=0)
+category_company = pd.read_excel(f'C:\\Users\\dwchae23\\QuantifyPro\\workplace\\KPD\\유사기업그룹\\backdata\\category.xlsx', sheet_name=1, index_col='종목명')
 
 
 
