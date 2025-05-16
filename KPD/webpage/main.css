@@ -1,0 +1,148 @@
+.title {
+    font-family :'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.main_font {
+    margin-left : 15px;
+    font-size : 12px;
+    margin-bottom : 3px ;
+    line-height: 5px;
+}
+
+.img_container {
+    background-color: rgb(255, 255, 255);
+    height : 100px;
+}
+
+.box_container {
+    width : 800px;
+}
+
+.header {
+    width: 100%; /*부모태그 width의 100% */
+    height: 10px;
+    background : rgb(226, 226, 226);
+}
+
+.title_container {
+    height : 50px;
+    width : 800px;
+    text-align : center;
+    margin : 0 auto;
+    padding : 5px ;
+    border : 0.15px solid black;
+    border-radius : 1px;
+    /*box-shadow : 3px 3px rgb(5, 4, 70) ;*/
+    font-size : 14px;
+    }
+
+.gaeyo {
+    border: 0.15px solid rgb(187, 187, 187);
+    width : 100%;
+    text-align : center;
+    /*padding : 15px;*/
+    font-size : 12px;
+    margin-top : 10px;
+}
+
+
+.logo {
+    width : 100px;
+    height : 100px;
+    margin-left : auto;
+    margin-right : auto;
+    display : block;
+}
+
+.p_center {
+    text-align : center;
+
+}
+
+/* 모든 <div>는 display: block 을 가짐 */
+.작성자프로필임 {
+    width : 70%;
+    height : 50px;
+    float : left; /* float : left는 요소를 붕 띄워서 왼쪽 정렬 */
+    background: rgb(201, 49, 49);
+
+}
+
+.우측이미지 {
+    width : 30%;
+    height : 250px;
+    float: right;
+    background-color: rgba(0, 0, 255, 0.274);
+}
+
+
+.게시글요약 {
+    width : 70%;
+    height : 160px;
+    float : left;
+    background: rgb(121, 121, 121);
+}
+
+.footer {
+    width : 100%;
+    height : 100px;
+    background-color : rgba(180, 105, 105, 0.301);
+    clear : both ; /* float 쓰고 나서 다음에 오는 요소는 clear 주는 게 좋음 */
+}
+
+.게시글제목임 {
+    width : 70% ;
+    height : 40px;
+    float : left;
+    background : rgb(219, 219, 219);
+}
+
+/* fsdataContainer 내 테이블 스타일 */
+#fsdataContainer {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top : 10px;
+    border : 0.5px solid #292929;
+}
+#fsdataContainer table {
+
+    width : 100%;
+    border-collapse : separate ;
+    border-spacing : 0;
+    table-layout: fixed;
+    border : none;
+    font-size : 13px;
+    font-family : Noto Sans KR, sans-serif ;
+}
+
+#fsdataContainer th,
+#fsdataContainer td {
+    padding: 1px;
+    text-align : center;
+    box-sizing: border-box;
+    color : #323232;
+    word-break: keep-all;
+    white-space : nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-collapse: collapse;
+    border : 0.5px dotted #434343;
+}
+
+#fsdataContainer thead th {
+
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #85ddff;
+    border: 0.5px #393939;
+}
+
+#fsdataContainer td {
+    border : 0.5px s
+}
+
+/* 마우스 오버 효과 */
+#fsdataContainer tr:hover {
+    background-color: #98fffb;
+}
