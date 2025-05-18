@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layout page</title>
+    <link href="layout_css.css" rel = "stylesheet">
+</head>
+<body style = "margin: 0;">
+    <div class = "main-background">
+        <div class = "text-box">
+            <h4 class="main-title">Buy our Shoes!</h4>
+            <p class ="marketing-text">스포츠 종목 아이템 추천 피트니스</p>
+            <button class="main-button">구매하기</button>
+        </div>
+    </div>
+    <div class ="gray-box">
+        <h3>how we design our shoes</h3>
+        <p>Lorem Ipsum is simply text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley and scrambled it to make a type specimen book.</p>
+    </div>
+
+    <form>
+
+
+    </form>
+    <div class = "date-container">
+        <label for ="eval-date">평가기준일:</label>
+        <select id="eval-date">
+            <option value=""> -- 선택 -- </option>
+            <option value="2024-12-31">2024-12-31</option>
+            <option value="2025-03-31">2025-03-31</option>
+            <option value="2025-06-30">2025-06-30</option>
+            <option value="2025-09-30">2025-09-30</option>
+            <option value="2025-12-31">2025-12-31</option>
+        </select>
+        <br>
+        <label for = "multiple-date">배수기준일:</label>
+        <select id="multiple-date">
+            <option value="">-- 선택 --</option>
+        </select>
+    </div>
+<!-- 자바스크립트 연결 -->
+<script src="logic.js"></script>
+
+<div class = "contact-container">
+    <h4 class="contact-title">contact us</h4>
+    <div class = "form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id ="email" placeholder="email@example.com">
+    </div>
+
+<!-- 2단 구조로 변경 -->
+    <div class= "form-row">
+        <div class = "half">
+            <label for="firstname" style ="font-size:14px;">First name</label>
+            <input type="text" id="firstname">
+        </div>
+
+        <div class = "half">
+            <label for ="lastname" style = "font-size:14px;">Last name</label>
+            <input type="text" id="lastname">
+        </div>
+    </div>
+
+
+
+    <div class = "form-group">
+        <label for = "message">Message</label>
+        <textarea id ="message" rows="4"></textarea>
+    </div>
+
+<!--    체크박스와 버튼을 같은 줄에 배치 -->
+    <div class = "form-row last-row">
+        <div class = "checkbox-group">
+            <input type="checkbox" id = "subscribe">
+            <label for = "subscribe" style="font-size : 12px;">Subscribe</label>
+        </div>
+        <button class ="submit-button">SEND</button>
+    </div>
+</div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</body>
+</html>
