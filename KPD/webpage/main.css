@@ -26,23 +26,42 @@
 
 .title_container {
     height : 50px;
-    width : 800px;
+    width : 95%;
     text-align : center;
     margin : 0 auto;
-    padding : 5px ;
-    border : 0.15px solid black;
+    border : 1px solid black;
     border-radius : 1px;
-    /*box-shadow : 3px 3px rgb(5, 4, 70) ;*/
     font-size : 14px;
+    box-sizing : border-box;
     }
 
+.company-info-container {
+    border : 1px solid #292929;
+    width : 95%;
+    margin : 10px auto;
+    padding : 15px;
+    box-sizing : border-box ;
+    height : 500px;
+    font-size : 12px;
+    gap: 5px;
+    display : flex;
+    flex-direction : column;
+
+}
+
+
+
 .gaeyo {
-    border: 0.15px solid rgb(187, 187, 187);
-    width : 100%;
+    border: 1px solid rgb(187, 187, 187);
+    width : 95%;
     text-align : center;
     /*padding : 15px;*/
     font-size : 12px;
-    margin-top : 10px;
+    margin : 20px auto;
+    padding : 10px;
+    box-sizing : border-box;
+    line-height : 1.8;
+
 }
 
 
@@ -60,49 +79,15 @@
 }
 
 /* 모든 <div>는 display: block 을 가짐 */
-.작성자프로필임 {
-    width : 70%;
-    height : 50px;
-    float : left; /* float : left는 요소를 붕 띄워서 왼쪽 정렬 */
-    background: rgb(201, 49, 49);
 
-}
-
-.우측이미지 {
-    width : 30%;
-    height : 250px;
-    float: right;
-    background-color: rgba(0, 0, 255, 0.274);
-}
-
-
-.게시글요약 {
-    width : 70%;
-    height : 160px;
-    float : left;
-    background: rgb(121, 121, 121);
-}
-
-.footer {
-    width : 100%;
-    height : 100px;
-    background-color : rgba(180, 105, 105, 0.301);
-    clear : both ; /* float 쓰고 나서 다음에 오는 요소는 clear 주는 게 좋음 */
-}
-
-.게시글제목임 {
-    width : 70% ;
-    height : 40px;
-    float : left;
-    background : rgb(219, 219, 219);
-}
 
 /* fsdataContainer 내 테이블 스타일 */
 #fsdataContainer {
-    max-height: 400px;
+    max-height: 600px;
     overflow-y: auto;
-    margin-top : 10px;
-    border : 0.5px solid #292929;
+    margin : 20px auto;
+    width : 95%;
+    box-sizing : border-box;
 }
 #fsdataContainer table {
 
@@ -111,38 +96,127 @@
     border-spacing : 0;
     table-layout: fixed;
     border : none;
-    font-size : 13px;
+    font-size : 12px;
     font-family : Noto Sans KR, sans-serif ;
 }
 
+/* 2) 1~4번째 열에 각각 20% 폭 지정 */
+#fsdataContainer th:nth-child(1),
+#fsdataContainer td:nth-child(1),
+#fsdataContainer th:nth-child(2),
+#fsdataContainer td:nth-child(2) { width: 10%;}
+#fsdataContainer th:nth-child(3),
+#fsdataContainer td:nth-child(3) { width: 20%;}
+#fsdataContainer th:nth-child(4),
+#fsdataContainer td:nth-child(4) { width: 50%; }
+
+/* 3) (선택) 5번째 이후 열은 최소폭만 잡고 자동 분배 */
+#fsdataContainer th:nth-child(n+5),
+#fsdataContainer td:nth-child(n+5) {
+    /* width를 지정하지 않으면 나머지 공간을 균등 분배합니다 */
+    /* 가끔 min-width를 주면 너무 좁아지는 걸 방지할 수 있어요 */
+    /* 예: min-width: 80px; */
+}
+
+
 #fsdataContainer th,
 #fsdataContainer td {
-    padding: 1px;
+    padding: 2px;
     text-align : center;
     box-sizing: border-box;
-    color : #323232;
+    color : #1e1e1e;
     word-break: keep-all;
     white-space : nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     border-collapse: collapse;
-    border : 0.5px dotted #434343;
+    border : 0.1mm  solid #000000;
 }
 
 #fsdataContainer thead th {
-
     position: sticky;
     top: 0;
     z-index: 5;
     background: #85ddff;
-    border: 0.5px #393939;
 }
 
-#fsdataContainer td {
-    border : 0.5px s
-}
 
 /* 마우스 오버 효과 */
 #fsdataContainer tr:hover {
     background-color: #98fffb;
+}
+
+.selected-list {
+    width : 95%;
+    height: 200px;
+    border : 0.15px solid #292929;
+    margin : 20px auto;
+    display : block;
+    overflow-y : auto;
+}
+
+.selected-list table {
+    width : 100%;
+    border-collapse : collapse ;
+    border-spacing : 0;
+    table-layout: fixed;
+    border : none;
+    font-size : 12px;
+    font-family : Noto Sans KR, sans-serif ;
+}
+
+.selected-list th {
+    background-color: #85ddff;
+    color: #000;
+    font-weight: bold;
+    text-align : center;
+    vertical-align : middle;
+    padding: 3px;
+    border: 0.15px solid #272727;
+}
+
+.selected-list td {
+    text-align : center;
+    vertical-align : middle;
+    padding: 3px;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.selected-list tr:hover { background-color: #98fffb;}
+
+.selected-list th:nth-child(1),
+.selected-list td:nth-child(1) { width : 5%; }
+.selected-list th:nth-child(2),
+.selected-list td:nth-child(2),
+.selected-list th:nth-child(3),
+.selected-list td:nth-child(3) { width : 10%; }
+.selected-list th:nth-child(4),
+.selected-list td:nth-child(4),
+.selected-list th:nth-child(5),
+.selected-list td:nth-child(5) { width : 20%; }
+
+.search-container {
+    width : 95%;
+    border : 1px solid #292929;
+    height : 100px;
+    margin : 20px auto;
+    padding : 10px;
+    box-sizing : border-box;
+}
+
+#discount-rate-custom {
+    margin-left: 10px;
+    padding: 4px;
+    font-size: 14px;
+    width: 120px;
+}
+
+.selected-list {
+    font-size : 12px;
+    margin: 20px auto;
+    padding : 10px;
+    box-sizing : border-box;
 }
