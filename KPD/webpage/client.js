@@ -26,8 +26,7 @@ async function loadCategoryAndFsdata(filter = '', group = '') {
 
         // 5) 테이블 그리기 (기존 코드 유지)
         const displayColumns = [
-            '그룹명','종목명','주요상품','매출비율',
-            'PER','PSR','PBR'
+            'kap_group', 'company', 'sector', 'industry', 'main_product' , 'PER','PSR','PBR'
         ];
 
         let html = '<table><thead><tr>';
@@ -54,7 +53,7 @@ async function loadCategoryAndFsdata(filter = '', group = '') {
 document.getElementById('groupSelect').addEventListener('change', () => {
     const keyword = document.getElementById('searchInput').value.trim();
     const group   = document.getElementById('groupSelect').value;
-    loadCategoryAndFsdata(keyword, group);
+    loadCategoryAndFsdata(keyword, group).then(r =>{} ).then(r =>{} ).then(r =>{} ).then(r =>{} ).then(r =>{} );
 });
 
 
@@ -132,15 +131,32 @@ document.getElementById('fsdataContainer').addEventListener('dblclick', e => {
 
 async function loadGroupOptions() {
     const res = await fetch('/api/groupnames');
+    if (!res.ok) throw new Error('그룹명 로드 실패');
     const groups = await res.json();
+
     const sel = document.getElementById('groupSelect');
+    // 중복 방지: 기본 옵션만 남기고 지우기
+    sel.innerHTML = '<option value="">--전체--</option>';
+
+    // 브라우저의 TextDecoder 를 사용, euc-kr 인코딩 지원하는 최신 브라우저에서 동작
+    const decoder = new TextDecoder('euc-kr');
+
     groups.forEach(g => {
+        let name = g.group_name;
+        // Buffer 객체 형태인 경우: { type:'Buffer', data:[…] }
+        if (name && typeof name === 'object' && Array.isArray(name.data)) {
+            const uint8 = new Uint8Array(name.data);
+            name = decoder.decode(uint8);
+        }
+        // 그렇지 않으면 이미 string 이므로 그대로 사용
+
         const opt = document.createElement('option');
-        opt.value = g.group_name;
-        opt.textContent = g.group_name;
+        opt.value       = name;
+        opt.textContent = name;
         sel.appendChild(opt);
     });
 }
 
 // 페이지 로드시 한 번만
-loadGroupOptions();
+loadGroupOptions().then(r =>{} ).then(r =>{} );
+

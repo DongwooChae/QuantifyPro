@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:mysql://localhost:3306/price</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="dwchae23@dwchae23.mycafe24.com" uuid="f0f71a5f-a12e-4f8b-b42d-725169d8093f">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://dwchae23.mycafe24.com:3306/dwchae23</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

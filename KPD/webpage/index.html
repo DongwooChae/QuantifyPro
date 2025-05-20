@@ -9,7 +9,7 @@
 
 <body>
     <div class="img_container">
-        <img src="img/kap_logo.jpg" class = "logo">
+        <img src="img/kap_logo.jpg" class = "logo" alt="">
     </div>
     <div class = "title_container">
         <p>대체투자2본부 유사기업비교법 평가엔진</p>
@@ -19,11 +19,44 @@
     <!-- 데이터 출력 영역 및 스크립트 언결 -->
     <h3 style = "margin-left : 50px;">상장사 재무데이터를 이용한 유사기업비교법 계산</h3>
     <div class = "company-info-container">
-        <p>평가대상기업의 정보는 다음과 같습니다</p>
-        <label for = "company-bps">BPS</label>
-        <input type = "text" id ="company-bps" placeholder ="주당 장부가" />
-        <label for = "company-sps">SPS</label>
-        <input type = "text" id ="company-sps" placeholder ="주당 매출액" />
+        <h2>Input Data</h2>
+        <div class = "info-row">
+            <div class ="info-field">
+        <label for = "valuation-date">평가기준일</label>
+        <select id ="valuation-date">
+            <option value="2024-12-31">2024-12-31</option>
+            <option value="2025-03-31">2025-03-31</option>
+            <option value="2025-06-30">2025-06-30</option>
+            <option value="2025-09-30">2025-09-30</option>
+            <option value="2025-12-31">2025-12-31</option>
+        </select>
+            </div>
+            <div class ="info-field">
+        <label for = "average-date">배수기준일</label>
+        <select id ="average-date">
+            <option value="2024-07-31 ~ 2024-12-31">2024-07-31 ~ 2024-12-31</option>
+            <option value="2024-08-31 ~ 2025-01-31">2024-08-31 ~ 2025-01-31</option>
+            <option value="2024-10-31 ~ 2025-03-31">2024-10-31 ~ 2025-03-31</option>
+            <option value="2024-11-30 ~ 2025-04-30">2024-11-30 ~ 2025-04-30</option>
+            <option value="2025-01-31 ~ 2025-06-30">2025-01-31 ~ 2025-06-30</option>
+        </select>
+            </div>
+        </div>
+        <div class="info-row">
+            <div class ="info-field">
+                <label for = "company-eps">EPS</label>
+                <input type = "text" id ="company-eps" placeholder ="주당 이익" />
+                </div>
+            <div class ="info-field">
+                <label for = "company-bps">BPS</label>
+                <input type = "text" id ="company-bps" placeholder ="주당 장부가" />
+                </div>
+            <div class ="info-field">
+                <label for = "company-sps">SPS</label>
+                <input type = "text" id ="company-sps" placeholder ="주당 매출액" />
+                </div>
+        </div>
+
         <label for = "outstanding-number">유통보통주식수(적용주식수)</label>
         <input type = "text" id ="outstanding-number" placeholder ="유통보통주식수" />
         <label for ="discount-rate">할인율</label>
@@ -35,29 +68,63 @@
             <option value="custom">직접입력</option>
             </select>
         <input type ="number" id="discount-rate-custom" placeholder = "(예: 0.15)" step="0.01" style="display: none;"/>
+
     </div>
 
 
 
 
-    <div class = "gaeyo">
-        <p>비시장성지분증권 평가는 한국채택국제회계기준 제1039호(금융상품: 인식과 측정) 및 제1113호(공정가치측정)에 따라 활성시장이 존재하지 않는 지분증권의 공정가치 필요시, 비상장법인의 지분 상속시, 양수도시, 자산가치 평가시 등 다양한 목적을 가진 정보이용자에게 합리적이고 공정한 평가가액을 제공하는 서비스입니다.</p>
-    </div>
+    <div class = "control-result">
+        <h1>Control & Result</h1>
+        <p>해당 영역에는 선정된 기업의 가치배수 평균 및 가치배수 선택 기능이 추가됩니다.</p>
+        <div class = "info-row" style="border : 1px solid #292929; margin: 10px; padding : 10px; ">
+            <div class ="info-field">
+                <label for = "choose-per">PER(PER<0 자동 제외)</label>
+                <span class="avg-value" id="avg-per">-</span>
+                <input type="checkbox" id="choose-per">
+                </div>
+            <div class ="info-field">
+                <label for = "choose-psr">PSR</label>
+                <span class="avg-value" id="avg-psr">-</span>
+                <input type="checkbox" id="choose-psr">
+            </div>
+            <div class ="info-field">
+                <label for = "choose-pbr">PBR</label>
+                <span class="avg-value" id="avg-pbr">-</span>
+                <input type="checkbox" id="choose-pbr">
+            </div>
+            <div class ="info-field">
+                <label for = "choose-evebitda">EV/EBITDA</label>
+                <span class="avg-value" id="avg-evebitda">-</span>
+                <input type="checkbox" id="choose-evebitda">
+            </div>
+            <div class ="info-field">
+                <label for = "choose-evsales">EV/SALES</label>
+                <span class="avg-value" id="avg-evsales">-</span>
+                <input type="checkbox" id="choose-evsales">
+            </div>
 
-<h3 style = "margin-left : 50px;">현재 포함된 상장기업 리스트</h3>
+        </div>
+    </div>
+<div class = "list-title">
+    <h3 style = "margin-left : 50px;">현재 포함된 상장기업 리스트</h3>
+    <button>Reset</button>
+</div>
 <!-- 선택된 유사기업 리스트가 포함되는 박스  -->
     <div class = "selected-list">
         <table id ="selectedTable">
             <thead>
             <tr>
                 <th>포함</th>
-                <th>그룹명</th>
-                <th>종목명</th>
-                <th>주요상품</th>
-                <th>매출비율</th>
+                <th>kap_group</th>
+                <th>company</th>
+                <th>sector</th>
+                <th>industry</th>
+                <th>main_product</th>
                 <th>PER</th>
                 <th>PSR</th>
                 <th>PBR</th>
+
 
                 </tr>
             </thead>

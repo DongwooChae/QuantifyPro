@@ -1,3 +1,9 @@
+/* 전체 font-family*/
+body { font-family: Noto Sans KR, sans-serif;
+font-size : 12px;
+line-height : 1.5;}
+
+
 .title {
     font-family :'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
@@ -41,7 +47,7 @@
     margin : 10px auto;
     padding : 15px;
     box-sizing : border-box ;
-    height : 500px;
+    height : 800px;
     font-size : 12px;
     gap: 5px;
     display : flex;
@@ -49,10 +55,12 @@
 
 }
 
+.info-row { display : flex; gap: 20px;}
+.info-field { flex:1; display:flex; flex-direction: column; gap: 4px;}
 
 
-.gaeyo {
-    border: 1px solid rgb(187, 187, 187);
+.control-result {
+    border: 1px solid #292929;
     width : 95%;
     text-align : center;
     /*padding : 15px;*/
@@ -106,9 +114,11 @@
 #fsdataContainer th:nth-child(2),
 #fsdataContainer td:nth-child(2) { width: 10%;}
 #fsdataContainer th:nth-child(3),
-#fsdataContainer td:nth-child(3) { width: 20%;}
+#fsdataContainer td:nth-child(3) { width: 8%; }
 #fsdataContainer th:nth-child(4),
-#fsdataContainer td:nth-child(4) { width: 50%; }
+#fsdataContainer td:nth-child(4) { width: 10%;}
+#fsdataContainer th:nth-child(5),
+#fsdataContainer td:nth-child(5) { width: 30%; }
 
 /* 3) (선택) 5번째 이후 열은 최소폭만 잡고 자동 분배 */
 #fsdataContainer th:nth-child(n+5),
@@ -194,9 +204,11 @@
 .selected-list th:nth-child(3),
 .selected-list td:nth-child(3) { width : 10%; }
 .selected-list th:nth-child(4),
-.selected-list td:nth-child(4),
+.selected-list td:nth-child(4) { width : 8% ;}
 .selected-list th:nth-child(5),
-.selected-list td:nth-child(5) { width : 20%; }
+.selected-list td:nth-child(5) { width : 10%; }
+.selected-list th:nth-child(6),
+.selected-list td:nth-child(6) { width : 30%; }
 
 .search-container {
     width : 95%;
@@ -219,4 +231,37 @@
     margin: 20px auto;
     padding : 10px;
     box-sizing : border-box;
+}
+
+.list-title {
+    box-sizing : border-box;
+    display : flex; /* flex 컨테이너로 전환 */
+    justify-content : space-between; /* 가로방향으로 정렬 */
+    align-items: center; /* 세로방향으로 정렬 */
+    width : 95%;
+
+}
+
+
+/* control & result 영역 전체에서 각 info-field를 가로로 배치 */
+.control-result .info-row {
+    display : flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* 각 info-field 내부의 label, checkbox, avg-span 을 한 줄에 배치 */
+.control-result .info-field {
+    display: flex;
+    align-items: center;  /* 세로 가운데 정렬 */
+    gap: 4px;             /* label ↔ checkbox ↔ avg-value 간격 */
+    flex-direction : row;
+}
+
+/* avg-value 기본 스타일 (숫자 들어갈 자리를 조금 작게) */
+.control-result .avg-value {
+    min-width: 40px;
+    text-align: center;
+    font-weight: bold;
 }
