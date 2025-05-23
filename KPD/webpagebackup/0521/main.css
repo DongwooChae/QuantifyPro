@@ -1,0 +1,294 @@
+.noto-sans-kr <uniquifier> {
+                   font-family: "Noto Sans KR", sans-serif;
+                   font-optical-sizing: auto;
+                   font-weight: normal;
+                   font-style: normal;
+               }
+
+/* 전체 font-family*/
+body { font-family: 'Noto Sans KR', sans-serif;
+font-size : 12px;
+line-height : 1.5;}
+
+
+
+.title_container {
+    height : 50px;
+    width : 95%;
+    padding : 10px;
+    margin : 0 auto;
+    border : 1px solid black;
+    border-radius : 1px;
+    font-size : 14px;
+    box-sizing : border-box;
+    display: flex;
+    align-items: center;
+    gap : 10px;
+
+
+    }
+
+.company-info-container {
+    border : 1px solid #292929;
+    width : 95%;
+    margin : 10px auto;
+    padding : 15px;
+    box-sizing : border-box ;
+    height : 400px;
+    font-size : 12px;
+    gap: 10px;
+    display : flex;
+    flex-direction : column;
+    line-height : 1.8;
+
+}
+
+.info-row { display : flex; gap: 10px; flex-wrap: wrap; justify-content: center;}
+.info-field { display: flex; flex-direction: row; gap: 10px; flex-wrap: wrap; justify-content: center;}
+.info-box {
+    border: 1px solid #292929;
+    width : 500px;
+    box-sizing : border-box;
+    height: 500px;
+    padding : 10px;
+    line-height: 1.25;
+    margin: 20px;
+}
+
+.control-result {
+    border: 1px solid #292929;
+    width : 95%;
+    text-align : center;
+    /*padding : 15px;*/
+    font-size : 12px;
+    margin : 20px auto;
+    padding : 10px;
+    box-sizing : border-box;
+    line-height : 1.8;
+
+}
+
+
+.logo {
+    width : 100px;
+    height : 100px;
+    margin-left : auto;
+    margin-right : auto;
+    display : block;
+}
+
+.p_center {
+    text-align : center;
+
+}
+
+/* 모든 <div>는 display: block 을 가짐 */
+
+
+/* fsdataContainer 내 테이블 스타일 */
+#fsdataContainer {
+    max-height: 600px;
+    overflow-y: auto;
+    margin : 20px auto;
+    width : 95%;
+    box-sizing : border-box;
+}
+#fsdataContainer table {
+
+    width : 100%;
+    border-collapse : separate ;
+    border-spacing : 0;
+    table-layout: fixed;
+    border : none;
+    font-size : 12px;
+    font-family : Noto Sans KR, sans-serif ;
+}
+
+/* 2) 1~4번째 열에 각각 20% 폭 지정 */
+#fsdataContainer th:nth-child(1),
+#fsdataContainer td:nth-child(1),
+#fsdataContainer th:nth-child(2),
+#fsdataContainer td:nth-child(2) { width: 10%;}
+#fsdataContainer th:nth-child(3),
+#fsdataContainer td:nth-child(3) { width: 8%; }
+#fsdataContainer th:nth-child(4),
+#fsdataContainer td:nth-child(4) { width: 10%;}
+#fsdataContainer th:nth-child(5),
+#fsdataContainer td:nth-child(5),
+#fsdataContainer th:nth-child(6),
+#fsdataContainer td:nth-child(6) { width: 25%; }
+
+    /* 3) (선택) 5번째 이후 열은 최소폭만 잡고 자동 분배 */
+
+
+#fsdataContainer th,
+#fsdataContainer td {
+    padding: 2px;
+    text-align : center;
+    box-sizing: border-box;
+    color : #1e1e1e;
+    word-break: keep-all;
+    white-space : nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-collapse: collapse;
+    border : 0.1mm  solid #000000;
+}
+
+#fsdataContainer thead th {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #85ddff;
+}
+
+
+/* 마우스 오버 효과 */
+#fsdataContainer tr:hover {
+    background-color: #98fffb;
+}
+
+.selected-list {
+    width : 95%;
+    height: 600px;
+    border : 0.15px solid #292929;
+    margin : 20px auto;
+    display : block;
+    overflow-y : auto;
+    padding: 10px;
+    box-sizing : border-box;
+    flex-wrap: wrap;
+
+}
+
+.selected-list table {
+    width : 100%;
+    border-collapse : collapse ;
+    border-spacing : 0;
+    table-layout: fixed;
+    border : none;
+    font-size : 12px;
+    font-family : Noto Sans KR, sans-serif ;
+}
+
+.selected-list th {
+    background-color: #85ddff;
+    color: #000;
+    font-weight: bold;
+    text-align : center;
+    vertical-align : middle;
+    padding: 3px;
+    border: 0.15px solid #272727;
+}
+
+.selected-list td {
+    text-align : center;
+    vertical-align : middle;
+    padding: 3px;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.selected-list tr:hover { background-color: #98fffb;}
+.selected-list th:nth-child(1),
+.selected-list td:nth-child(1) {width : 3%;}
+.selected-list th:nth-child(2),
+.selected-list td:nth-child(2) { width: 10%;}
+.selected-list th:nth-child(3),
+.selected-list td:nth-child(3),
+.selected-list th:nth-child(4),
+.selected-list td:nth-child(4) { width: 8%; }
+.selected-list th:nth-child(5),
+.selected-list td:nth-child(5) { width: 10%; }
+.selected-list th:nth-child(6),
+.selected-list td:nth-child(6),
+.selected-list th:nth-child(7),
+.selected-list td:nth-child(7) { width: 25%; }
+/* 3) (선택) 5번째 이후 열은 최소폭만 잡고 자동 분배 */
+.selected-list th:nth-child(n+5),
+.selected-list td:nth-child(n+5) {
+
+
+.search-container {
+    width : 95%;
+    border : 1px solid #292929;
+    height : 100px;
+    margin : 20px auto;
+    padding : 10px;
+    box-sizing : border-box;
+}
+
+#discount-rate-custom {
+    margin-left: 10px;
+    padding: 4px;
+    font-size: 14px;
+    width: 120px;
+}
+
+.selected-list {
+    font-size : 12px;
+    margin: 20px auto;
+    padding : 10px;
+    box-sizing : border-box;
+}
+
+.list-title {
+    box-sizing : border-box;
+    display : flex; /* flex 컨테이너로 전환 */
+    justify-content : space-between; /* 가로방향으로 정렬 */
+    align-items: center; /* 세로방향으로 정렬 */
+    width : 90%;
+}
+
+.controls { display: flex; gap: 8px;}
+
+
+/* control & result 영역 전체에서 각 info-field를 가로로 배치 */
+.control-result .info-row {
+    display : flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* 각 info-field 내부의 label, checkbox, avg-span 을 한 줄에 배치 */
+.control-result .info-field {
+    display: flex;
+    align-items: center;  /* 세로 가운데 정렬 */
+    gap: 4px;             /* label ↔ checkbox ↔ avg-value 간격 */
+    flex-direction : row;
+}
+
+/* avg-value 기본 스타일 (숫자 들어갈 자리를 조금 작게) */
+.control-result .avg-value {
+    min-width: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.parameter-wrapper {
+    margin:10px;
+    padding:10px;
+    border: 1px solid #292929;
+}
+
+/* 파라미터 테이블 스타일 */
+.parameter-table {
+    border-collapse: collapse;
+    border: 1px solid #292929;
+    width: 100%;
+
+}
+
+#parameter-body { border: 1px solid #292929;}
+
+.parameter-table th {
+    background-color: #85ddff;
+
+}
+
+/* 짝수행 배경색 설정 */
+.parameter-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; }}

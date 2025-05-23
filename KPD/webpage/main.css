@@ -1,45 +1,16 @@
+.noto-sans-kr <uniquifier> {
+                   font-family: "Noto Sans KR", sans-serif;
+                   font-optical-sizing: auto;
+                   font-weight: normal;
+                   font-style: normal;
+               }
+
 /* 전체 font-family*/
-body { font-family: Noto Sans KR, sans-serif;
+body { font-family: 'Noto Sans KR', sans-serif;
 font-size : 12px;
-line-height : 1.5;}
+line-height : 1.25;}
 
 
-.title {
-    font-family :'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-}
-
-.main_font {
-    margin-left : 15px;
-    font-size : 12px;
-    margin-bottom : 3px ;
-    line-height: 5px;
-}
-
-.img_container {
-    background-color: rgb(255, 255, 255);
-    height : 100px;
-}
-
-.box_container {
-    width : 800px;
-}
-
-.header {
-    width: 100%; /*부모태그 width의 100% */
-    height: 10px;
-    background : rgb(226, 226, 226);
-}
-
-.title_container {
-    height : 50px;
-    width : 95%;
-    text-align : center;
-    margin : 0 auto;
-    border : 1px solid black;
-    border-radius : 1px;
-    font-size : 14px;
-    box-sizing : border-box;
-    }
 
 .company-info-container {
     border : 1px solid #292929;
@@ -47,17 +18,60 @@ line-height : 1.5;}
     margin : 10px auto;
     padding : 15px;
     box-sizing : border-box ;
-    height : 800px;
-    font-size : 12px;
-    gap: 5px;
+    font-size : 14px;
+    gap: 10px;
     display : flex;
     flex-direction : column;
+    line-height : 1.5;
+    justify-content: center;
+    align-items: center;
 
 }
 
-.info-row { display : flex; gap: 20px;}
-.info-field { flex:1; display:flex; flex-direction: column; gap: 4px;}
+.nav-bar {
+    font-size : 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background-color: #292929;
+    color: white;
+}
 
+.nav-item.request {    position: relative; }
+.nav-item.request::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffe454;
+    color: #323232;
+    padding: 4px 8px;
+    font-size: 14px;
+    opacity:0;
+    pointer-events: none;
+    transition: opacity .1s ease-in-out;
+    z-index: 10;
+    width: 300px;
+    text-align: center;
+}
+
+.nav-item.request:hover::after { opacity: 1; }
+
+
+
+.info-row { display : flex; gap: 10px; flex-wrap: wrap; justify-content: center; align-items: center;}
+.info-field { display: flex; flex-direction: row; gap: 10px; flex-wrap: wrap; justify-content: center;}
+.info-box {
+    border: 1px solid #292929;
+    width : 500px;
+    box-sizing : border-box;
+    height: 300px;
+    padding : 10px;
+    line-height: 1.25;
+    margin: 20px;
+}
 
 .control-result {
     border: 1px solid #292929;
@@ -108,6 +122,21 @@ line-height : 1.5;}
     font-family : Noto Sans KR, sans-serif ;
 }
 
+#fsdataContainer th,
+#fsdataContainer td {
+    padding: 4px 6px;
+    text-align: center;
+    box-sizing: border-box;
+    color: #1e1e1e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 0.1mm solid #000;
+}
+
+
+
+
 /* 2) 1~4번째 열에 각각 20% 폭 지정 */
 #fsdataContainer th:nth-child(1),
 #fsdataContainer td:nth-child(1),
@@ -118,30 +147,10 @@ line-height : 1.5;}
 #fsdataContainer th:nth-child(4),
 #fsdataContainer td:nth-child(4) { width: 10%;}
 #fsdataContainer th:nth-child(5),
-#fsdataContainer td:nth-child(5) { width: 30%; }
+#fsdataContainer td:nth-child(5),
+#fsdataContainer th:nth-child(6),
+#fsdataContainer td:nth-child(6) { width: 25%; }
 
-/* 3) (선택) 5번째 이후 열은 최소폭만 잡고 자동 분배 */
-#fsdataContainer th:nth-child(n+5),
-#fsdataContainer td:nth-child(n+5) {
-    /* width를 지정하지 않으면 나머지 공간을 균등 분배합니다 */
-    /* 가끔 min-width를 주면 너무 좁아지는 걸 방지할 수 있어요 */
-    /* 예: min-width: 80px; */
-}
-
-
-#fsdataContainer th,
-#fsdataContainer td {
-    padding: 2px;
-    text-align : center;
-    box-sizing: border-box;
-    color : #1e1e1e;
-    word-break: keep-all;
-    white-space : nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    border-collapse: collapse;
-    border : 0.1mm  solid #000000;
-}
 
 #fsdataContainer thead th {
     position: sticky;
@@ -150,19 +159,47 @@ line-height : 1.5;}
     background: #85ddff;
 }
 
+/* 줄무늬 효과 */
+#fsdataContainer tbody tr:nth-child(even) {
+    background-color: #e6e6e6;
+}
+
 
 /* 마우스 오버 효과 */
 #fsdataContainer tr:hover {
-    background-color: #98fffb;
+    background-color: #85ddff;
 }
+
+
+.backdata-container {
+    width : 95%;
+    height: 800px;
+    background-color: #292929;
+    margin : 20px auto;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    color : white;
+    line-height: 1.5;
+}
+
+.backdata-container .info-box { border-color: white;}
 
 .selected-list {
     width : 95%;
-    height: 200px;
+    height: 600px;
     border : 0.15px solid #292929;
     margin : 20px auto;
     display : block;
     overflow-y : auto;
+    padding: 10px;
+    box-sizing : border-box;
+    flex-wrap: wrap;
+    /*display:flex;*/
+    /*justify-content: center;*/
+
 }
 
 .selected-list table {
@@ -181,34 +218,41 @@ line-height : 1.5;}
     font-weight: bold;
     text-align : center;
     vertical-align : middle;
-    padding: 3px;
+    padding: 4px 6px;
     border: 0.15px solid #272727;
 }
 
 .selected-list td {
     text-align : center;
     vertical-align : middle;
-    padding: 3px;
+    padding: 4px 6px;
     border: 1px solid #ccc;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.selected-list tr:hover { background-color: #98fffb;}
 
+
+
+
+
+.selected-list tr:hover { background-color: #85ddff;}
 .selected-list th:nth-child(1),
-.selected-list td:nth-child(1) { width : 5%; }
+.selected-list td:nth-child(1) {width : 3%;}
 .selected-list th:nth-child(2),
-.selected-list td:nth-child(2),
+.selected-list td:nth-child(2) { width: 10%;}
 .selected-list th:nth-child(3),
-.selected-list td:nth-child(3) { width : 10%; }
+.selected-list td:nth-child(3),
 .selected-list th:nth-child(4),
-.selected-list td:nth-child(4) { width : 8% ;}
+.selected-list td:nth-child(4) { width: 8%; }
 .selected-list th:nth-child(5),
-.selected-list td:nth-child(5) { width : 10%; }
+.selected-list td:nth-child(5) { width: 10%; }
 .selected-list th:nth-child(6),
-.selected-list td:nth-child(6) { width : 30%; }
+.selected-list td:nth-child(6) { width: 15%;}
+.selected-list th:nth-child(7),
+.selected-list td:nth-child(7) { width: 25%; }
+
 
 .search-container {
     width : 95%;
@@ -238,9 +282,10 @@ line-height : 1.5;}
     display : flex; /* flex 컨테이너로 전환 */
     justify-content : space-between; /* 가로방향으로 정렬 */
     align-items: center; /* 세로방향으로 정렬 */
-    width : 95%;
-
+    width : 90%;
 }
+
+.controls { display: flex; gap: 8px;}
 
 
 /* control & result 영역 전체에서 각 info-field를 가로로 배치 */
@@ -265,3 +310,130 @@ line-height : 1.5;}
     text-align: center;
     font-weight: bold;
 }
+
+.parameter-wrapper {
+    margin:10px;
+    padding:10px;
+    border: 1px solid #292929;
+
+}
+
+/* 파라미터 테이블 스타일 */
+.parameter-table {
+    border-collapse: collapse;
+    width: 100%;
+
+
+}
+
+#parameter-body { border: 1px solid #292929;}
+
+.parameter-table th {
+    background-color: #85ddff;
+    border: 1px solid #292929;
+
+}
+.parameter-table td { border: 1px solid #292929; height: 20px;}
+
+
+/* 짝수행 배경색 설정 */
+.parameter-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; }
+
+
+/* group-stats-container 내 테이블 스타일 */
+#group-stats-container {
+    max-height: 600px;
+    overflow-y: auto;
+    margin: 20px auto;
+    width: 95%;
+    box-sizing: border-box;
+}
+
+/* 기본 테이블 레이아웃 */
+#group-stats-container table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    border: none;
+    font-size: 12px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 열 너비 지정 (예시: 1~3열 비율 조정) */
+#group-stats-container th:nth-child(1),
+#group-stats-container td:nth-child(1) { width: 15%; }
+#group-stats-container th:nth-child(2),
+#group-stats-container td:nth-child(2) { width : 5%; }
+#group-stats-container th:nth-child(3),
+#group-stats-container td:nth-child(3) { width: 40%; }
+/* 나머지 열은 자동 분배 */
+
+/* 셀 기본 스타일 */
+#group-stats-container th,
+#group-stats-container td {
+    padding: 4px 6px;
+    text-align: center;
+    box-sizing: border-box;
+    color: #1e1e1e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 0.1mm solid #000;
+}
+
+/* 헤더 고정 */
+#group-stats-container thead th {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #85ddff;
+}
+
+/* 줄무늬 효과 */
+#group-stats-container tbody tr:nth-child(even) {
+    background-color: #e6e6e6;
+}
+
+/* 마우스 오버 하이라이트 */
+#group-stats-container tbody tr:hover {
+    background-color: #85ddff;
+}
+
+
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-left : 8px;
+    vertical-align : middle;
+}
+
+.tag {
+    background: #eef;
+    padding: 2px 6px;
+    border-radius: 4px;
+    cursor: pointer; /* 클릭 시 삭제 기능 연결 */
+}
+
+
+
+
+.tooltip-box {
+    position: absolute;
+    background: #ffe454;
+    color: #323232;
+    margin : 20px;
+    padding: 12px 12px;
+    font-size: 14px;
+    white-space: pre-wrap;
+    max-width: 400px;
+    border-radius: 10px;
+    pointer-events: none;  /* 마우스 이벤트가 툴팁에 잡히지 않도록 */
+    z-index: 10000;
+    display: none;
+    line-height: 1.8;
+    transform: translate(-60px);
+}
+

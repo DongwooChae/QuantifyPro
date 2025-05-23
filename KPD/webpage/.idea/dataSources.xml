@@ -15,5 +15,12 @@
       <jdbc-url>jdbc:mariadb://dwchae23.mycafe24.com:3306/dwchae23</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="115.68.219.19" uuid="81342059-4ff4-40e5-8c4e-d1534699de43">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://115.68.219.19:3306/dwchae23</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
