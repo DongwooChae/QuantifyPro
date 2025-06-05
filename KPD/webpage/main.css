@@ -1,4 +1,4 @@
-.noto-sans-kr <uniquifier> {
+.noto-sans-kr<uniquifier> {
                    font-family: "Noto Sans KR", sans-serif;
                    font-optical-sizing: auto;
                    font-weight: normal;
@@ -437,3 +437,16 @@ line-height : 1.25;}
     transform: translate(-60px);
 }
 
+
+.result-show {
+    display: flex;
+    justify-content: center;
+    gap : 30px;
+}
+
+.last-selected-company {
+    width : 65%;
+    background: #faf3eb;
+    height : 300px;
+    overflow-y : auto; /* 높이를 넘길 때 세로 스크롤 */
+}

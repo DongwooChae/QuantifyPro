@@ -5,6 +5,218 @@ let lastData = [];                              // 서버에서 받아온 최신
 let currentSort = { key: null, asc: true };      // 정렬 상태
 let main_product_keywords = [];                  // 주요상품 키워드 태그 배열
 
+// ===== ① 숫자 / 퍼센트 포맷 함수 추가 =====
+/** 정수 반올림 + 천단위 콤마 */
+function formatKR(value) {
+  if (value == null || isNaN(value)) return '-';
+   return Math.round(value).toLocaleString('ko-KR');
+ }
+
+/** 0.10 → "10%", 소수점 버림 */
+function formatPercent(value) {
+  if (value == null || isNaN(value)) return '-';
+    return value.toLocaleString('ko-KR', {
+        style: 'percent',
+            maximumFractionDigits: 0
+           });
+         }
+
+/**
+ * div.last-selected-company 안에
+ * 포함된(체크된) 기업들의
+ * kap_group, company, PER, PSR, PBR 테이블로 뿌린다.
+ */
+function updateLastSelectedCompanies() {
+    const container = document.querySelector('.last-selected-company');
+    // 헤더
+    let html = `
+    <table class="parameter-table">
+      <thead>
+        <tr>
+          <th>kap_group</th>
+          <th>company</th>
+          <th>PER</th>
+          <th>PSR</th>
+          <th>PBR</th>
+        </tr>
+      </thead>
+      <tbody>
+  `;
+    // body: selectedTable 에서 체크된 행들
+    document.querySelectorAll('#selectedTable tbody tr').forEach(tr => {
+        const cb = tr.querySelector('input.include-checkbox');
+        if (!cb.checked) return;
+        const cells = tr.querySelectorAll('td');
+        const grp = cells[1].textContent.trim();
+        const cmp = cells[2].textContent.trim();
+        const per = cells[7].textContent.trim();
+        const psr = cells[8].textContent.trim();
+        const pbr = cells[9].textContent.trim();
+
+        html += `
+      <tr>
+        <td>${grp}</td>
+        <td>${cmp}</td>
+        <td>${per}</td>
+        <td>${psr}</td>
+        <td>${pbr}</td>
+      </tr>
+    `;
+    });
+
+    html += `</tbody></table>`;
+    container.innerHTML = html;
+
+    // ── 여기에 추가: 정렬 기능 활성화 ──
+    const table = container.querySelector('table');
+    const headers = table.querySelectorAll('th');
+    const tbody   = table.querySelector('tbody');
+
+    headers.forEach((th, colIdx) => {
+        let asc = true;
+        th.style.cursor = 'pointer';
+        th.addEventListener('click', () => {
+            // 1) 현재 행들 가져오기
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            // 2) 정렬
+            rows.sort((a, b) => {
+                const aText = a.cells[colIdx].textContent.trim();
+                const bText = b.cells[colIdx].textContent.trim();
+                const aNum  = parseFloat(aText.replace(/,/g, ''));
+                const bNum  = parseFloat(bText.replace(/,/g, ''));
+                const va = !isNaN(aNum) ? aNum : aText;
+                const vb = !isNaN(bNum) ? bNum : bText;
+                if (va < vb) return asc ? -1 : 1;
+                if (va > vb) return asc ? 1 : -1;
+                return 0;
+            });
+            // 3) 정렬된 순서로 다시 붙이기
+            rows.forEach(r => tbody.appendChild(r));
+            asc = !asc;
+        });
+    });
+}
+
+
+
+
+
+// ── Input → Value/Apply/Aggregate/Final 계산 함수 ──
+function updateValuation() {
+    // 1) Input 값 파싱
+    const eps = parseFloat(document.getElementById('company-eps').value) || 0;
+    const bps = parseFloat(document.getElementById('company-bps').value) || 0;
+    const sps = parseFloat(document.getElementById('company-sps').value) || 0;
+
+    // 2) 주당 가치 셀 채우기
+    document.getElementById('value-per').textContent  = formatKR(eps);
+    document.getElementById('value-psr').textContent = formatKR(sps);
+    document.getElementById('value-pbr').textContent = formatKR(bps);
+
+
+    // 3) 평균값 읽어서 적용주가 계산
+    const avgPer = parseFloat(document.getElementById('avg-per').textContent) || 0;
+    const avgPsr = parseFloat(document.getElementById('avg-psr').textContent) || 0;
+    const avgPbr = parseFloat(document.getElementById('avg-pbr').textContent) || 0;
+
+    const applyPer = avgPer * eps;
+    const applyPsr = avgPsr * sps;
+    const applyPbr = avgPbr * bps;
+
+    document.getElementById('apply-per').textContent  = formatKR(applyPer);
+    document.getElementById('apply-psr').textContent = formatKR(applyPsr);
+    document.getElementById('apply-pbr').textContent = formatKR(applyPbr);
+
+    // 4) 체크박스에 따라 Aggregate 적용주가
+    const perChk = document.getElementById('choose-per');
+    const psrChk = document.getElementById('choose-psr');
+    const pbrChk = document.getElementById('choose-pbr');
+    let sum = 0, cnt = 0;
+    if (perChk.checked && applyPer>0) { sum+=applyPer; cnt++; }
+    if (psrChk.checked && applyPsr>0) { sum+=applyPsr; cnt++; }
+    if (pbrChk.checked && applyPbr>0) { sum+=applyPbr; cnt++; }
+    const agg = cnt ? sum/cnt : 0;
+    document.getElementById('apply-aggregate').textContent = formatKR(agg);
+
+    // 5) 할인율 읽고 Discount 셀, FinalPrice 계산
+    const discSelect = document.getElementById('discount-rate');
+    const discCustom = document.getElementById('discount-rate-custom');
+    let disc = parseFloat(discSelect.value) || 0;
+    if (discSelect.value==='custom') disc = parseFloat(discCustom.value)||0;
+    document.getElementById('apply-discount-rate').textContent = formatPercent(disc);
+
+    const finalPrice = agg * (1 - disc);
+    document.getElementById('apply-final-price').textContent =
+        (agg && disc<1) ? formatKR(finalPrice) : '-';
+}
+
+// Input field 변경 시
+['company-eps','company-bps','company-sps'].forEach(id => {
+    document.getElementById(id)
+        .addEventListener('input', updateValuation);
+});
+
+// 할인율 select/custom
+document.getElementById('discount-rate')
+    .addEventListener('change', updateValuation);
+document.getElementById('discount-rate-custom')
+    .addEventListener('input', updateValuation);
+
+// 포함 체크박스
+['choose-per','choose-psr','choose-pbr'].forEach(id => {
+    document.getElementById(id)
+        .addEventListener('change', updateValuation);
+});
+
+
+
+// 평균 계산 전용 함수
+/**
+ * 선택된(selectedTable) 테이블에서
+ * 체크된 행의 PER, PSR, PBR 값을 읽어
+ * 평균을 계산한 뒤 화면에 뿌려준다.
+ */
+function calculateAndDisplayAverages() {
+    const tbody = document.querySelector('#selectedTable tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+
+    const perList = [];
+    const psrList = [];
+    const pbrList = [];
+
+    rows.forEach(tr => {
+        const cb = tr.querySelector('input.include-checkbox');
+        if (!cb || !cb.checked) return;
+        const cells = tr.querySelectorAll('td');
+        const per = parseFloat(cells[7].textContent.trim());
+        const psr = parseFloat(cells[8].textContent.trim());
+        const pbr = parseFloat(cells[9].textContent.trim());
+
+    // PER 음수(<0)인 경우 제외
+        if (!isNaN(per) && per > 0) perList.push(per);
+        if (!isNaN(psr)) psrList.push(psr);
+        if (!isNaN(pbr)) pbrList.push(pbr);
+    });
+
+    const mean = arr =>
+        arr.length
+            ? (arr.reduce((a,b) => a+b, 0) / arr.length).toFixed(2)
+            : '-';
+
+    document.getElementById('avg-per' ).textContent = mean(perList);
+    document.getElementById('avg-psr').textContent = mean(psrList);
+    document.getElementById('avg-pbr').textContent = mean(pbrList);
+
+    updateValuation();
+    updateLastSelectedCompanies();
+
+}
+
+
+
+
+
+
 
 // ① 툴팁용 실제 DOM 노드 하나만 body 에 추가
 const tooltipBox = document.createElement('div');
@@ -246,6 +458,8 @@ function addToSelectedList(values) {
     const cb = document.createElement('input');
     cb.type = 'checkbox';
     cb.className = 'include-checkbox';
+    // 체크 상태가 바뀔 때마다 평균 재계산
+    cb.addEventListener('change', calculateAndDisplayAverages);
     tdCheck.appendChild(cb);
     tr.appendChild(tdCheck);
 
@@ -265,8 +479,19 @@ function addToSelectedList(values) {
     // 3) tbody에 tr 추가
     tbody.appendChild(tr);
 
+    // ── 행 클릭 시 체크박스 토글 ──
+    tr.addEventListener('click', () => {
+        const cb = tr.querySelector('input.include-checkbox');
+        if (!cb) return;
+        cb.checked = !cb.checked;
+        calculateAndDisplayAverages();
+        updateLastSelectedCompanies();  // 3)번에서 만들 함수 호출
+    });
+
+
     // 4) 새로 추가된 core_sales 셀에 tooltip 속성 붙이기
     initCoreSalesTooltip();
+    calculateAndDisplayAverages();
 }
 
 
@@ -303,6 +528,8 @@ selectAllBtn.addEventListener('click', () => {
 
     // 3) 정렬 기능 재활성화
     enableSelectedTableSorting();
+
+    calculateAndDisplayAverages();
 });
 
 
@@ -310,6 +537,8 @@ selectAllBtn.addEventListener('click', () => {
 const resetBtn = document.getElementById('list-reset');
 resetBtn.addEventListener('click', () => {
     document.querySelector('#selectedTable tbody').innerHTML='';
+
+    calculateAndDisplayAverages();
 });
 
 
